@@ -1,6 +1,10 @@
 const form = document.querySelector("#form");
 const content = document.querySelector(".content");
 let movieArray = [];
+     
+loadStorge();
+
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   content.innerHTML = "";
@@ -36,7 +40,7 @@ return `<div class="movie-card">
           <div class="movie-type">
             <p>${data.Runtime}</p>
             <p>${data.Genre}</p>
-            <div class="movie-WatchList">
+            <div class="movie-WatchList" style = "visibility:${fund(data) ? "hidden" : ""};">
             <button id="btn-${i}" class="btn btn-primary"  > <i class="fi fi-ss-add"></i></button><p>WatchList</p>
             </div>
             </div>
@@ -66,26 +70,26 @@ function addWatchlist(movies){
 for (let i = 0; i < movies.length; i++) {
     document.getElementById(`btn-${i}`).addEventListener("click", async (e) => {
     e.preventDefault();
-    const storge = JSON.parse(window.localStorage.getItem('movies'))
-    if (!storge){
-      movieArray.push(movies[i]);
-    }
-    else if (storge.length > 0) {
-      movieArray = [...storge];
      const found = fund(movies[i])
       if (!found) {
         movieArray.push(movies[i])
       }
-    }
+    
     window.localStorage.setItem('movies',JSON.stringify(movieArray));
    })
   }
 }
 
 
-
 function fund(movies){
  return movieArray.find((movie) => {
        return movie.Title == movies.Title
       })
+}
+
+function loadStorge(){
+  const storge = JSON.parse(window.localStorage.getItem('movies'))
+  if (storge){
+    movieArray = [...storge];
+  }
 }
