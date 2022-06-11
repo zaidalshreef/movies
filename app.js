@@ -1,11 +1,9 @@
-import { addWatchlist, loadStorge, renderMovies,movieArray} from "./renderhtmlFn.js";
+import { renderMovies,loadStorge} from "./renderhtmlFn.js";
 
 
 const form = document.querySelector("#form");
 const content = document.querySelector(".content");
-window.localStorage.clear();
 loadStorge();
-console.log(movieArray);
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -18,6 +16,6 @@ form.addEventListener("submit", async (e) => {
   const data = await res.json();
   const movies = data.Search;
   await renderMovies(movies,content)
-  addWatchlist(movies);
 }
 );
+  
