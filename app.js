@@ -3,7 +3,7 @@ import { addWatchlist, loadStorge, renderMovies,movieArray} from "./renderhtmlFn
 
 const form = document.querySelector("#form");
 const content = document.querySelector(".content");
-  
+window.localStorage.clear();
 loadStorge();
 console.log(movieArray);
 

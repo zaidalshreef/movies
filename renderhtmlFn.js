@@ -48,7 +48,7 @@ function createMovie(data,i){
     for (let i = 0; i < movies.length; i++) {
         document.getElementById(`btn-${i}`).addEventListener("click",  (e) => {
         e.preventDefault();
-        document.querySelector(`.movie-WatchList-${i}`).style.visibility = "hidden";
+        document.querySelector(`.movie-WatchList-${i}`).innerHTML = "WatchListed";
          const found =  fund(movies[i],movieArray);
           if (!found) {
             movieArray.push(movies[i])
