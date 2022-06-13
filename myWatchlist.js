@@ -1,4 +1,4 @@
-import { renderMovies, loadStorge,movieArray} from "./renderhtmlFn.js";
+import { renderMovies, loadStorge,movieArray} from "./RenderHtml.js";
 
 
 const content = document.querySelector(".content");

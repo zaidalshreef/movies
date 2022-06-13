@@ -1,4 +1,4 @@
-import { renderMovies,loadStorge} from "./renderhtmlFn.js";
+import { renderMovies,loadStorge} from "./RenderHtml.js";
 
 
 const form = document.querySelector("#form");
