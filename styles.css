@@ -1,5 +1,5 @@
 body {
-  background-color: #121212;
+  background: linear-gradient(to right, #282829, #1a0a0a);
   margin: 0;
   box-sizing: border-box;
   font-family: 'Inter', cursive, serif;
@@ -9,8 +9,6 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  
-   
 }
 
 .header {
@@ -34,24 +32,22 @@ body {
 .search {
   display: flex;
   align-items: center;
-  width: 60%;
-  position: absolute;
-  top: 30%;
-  left: 20%;
+  justify-content: space-between;
+  margin: 0 auto ;
+  max-width: 60%;
   border-radius: 5px;
   background-color: #2e2e2f;
   color: #000;
-  font-size: 1rem;
-  font-weight: bold;
+  margin-top: -0.5em;
 }
 
 .search > input{
-  width: 90%;
+  width: 95%;
   border: none;
   outline: none;
   background-color: transparent;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .fi-rr-search{
@@ -62,8 +58,8 @@ body {
 
 .search > button{
   color: #fff;
-  font-size: 1.2rem;
-  padding: 0.5em 1em;
+  font-size: 0.8rem;
+  padding: 0.6em 0.4em;
   background: #4B4B4B;
   border: none;
   border-radius: 3px;
@@ -77,9 +73,9 @@ body {
   display: flex;
   flex-direction: column;
   align-self: center;
-  max-width: 915px;
-  min-width: 630px;
-  margin: 5em 13em;
+  max-width: 1440px;
+  width: 90%;
+  margin: 3em 0em;
   color: #fff;
 }	
 
@@ -87,17 +83,16 @@ body {
 .movie-card{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 
 }
 
-.movie-image{
-  flex-grow: 0;
-}
 
 .movie-image > img{
-  width: 150px;
+  margin-right: .5em;
+  width: 10em;
   border-radius: 2.32941px;
-  margin-right: 1em;
 
 }
 
@@ -105,7 +100,8 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 2.32941px;
-  flex-grow: 1; 
+  width: 60%;
+  min-width: 15em;
 }
 
 .movie-name {
@@ -113,7 +109,6 @@ body {
 	flex-direction: row;
 	align-items: baseline;
 	justify-content: space-between;
-	margin-right: 4.5em;
 	
 	
 }
@@ -121,15 +116,13 @@ body {
 .movie-type {
 	display: flex;
 	flex-direction: row;
-	align-items: baseline;
+  align-items: baseline;
 	justify-content: space-between;
-	margin-right: 4.5em;
+  flex-wrap: wrap;
 
 }
 
 .movie-description {
-	margin-right: 4.5em;
-	margin-top: 2em;
 	text-align: start;
 }
 
