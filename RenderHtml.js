@@ -1,4 +1,10 @@
 let movieArray = [];
+let watchlistedHtml = (i) => {
+  return `<button id="btn-${i}" class="btn btn-primary" hidden > <i class="fi fi-ss-add"></i></button><p>WatchListed</p>`  
+}
+let watchlistHtml =  (i) => {
+  return `<button id="btn-${i}" class="btn btn-primary"  > <i class="fi fi-ss-add"></i></button><p>WatchList</p>`
+}
 
 function createMovie(data, i) {
   return `<div class="movie-card">
@@ -21,8 +27,8 @@ function createMovie(data, i) {
                 <div class="movie-WatchList-${i} movie-WatchList">
                 ${
                   fund(data, movieArray)
-                    ? `<button id="btn-${i}" class="btn btn-primary" hidden > <i class="fi fi-ss-add"></i></button><p>WatchListed</p>`
-                    : `<button id="btn-${i}" class="btn btn-primary"  > <i class="fi fi-ss-add"></i></button><p>WatchList</p>`
+                    ? `${watchlistedHtml(i)}`
+                    : `${watchlistHtml(i)}`
                 }
                 </div>
                 </div>
@@ -50,7 +56,7 @@ function addWatchlist(movies) {
   for (let i = 0; i < movies.length; i++) {
     document.getElementById(`btn-${i}`).addEventListener("click", (e) => {
       e.preventDefault();
-      document.querySelector(`.movie-WatchList-${i}`).innerHTML = "WatchListed";
+      document.querySelector(`.movie-WatchList-${i}`).innerHTML = watchlistedHtml(i);
       if(!fund(movies[i], movieArray)){
         movieArray.push(movies[i]);
       }
